@@ -115,41 +115,32 @@ useEffect(() => {
 
   const plans: ProductPlan[] = [
     {
-      id: "15days",
-      title: "15 Days",
+      id: "30days",
+      title: "30 Days",
       bottles: 1,
-      tablets: 30,
-      price: 999,
-      mrp: 1299,
-      save: 24,
+      tablets: 32,
+      price: 755.25,
+      mrp: 795,
+      save: 39.75,
     },
     {
-      id: "1month",
-      title: "1 Month",
-      bottles: 1,
-      tablets: 60,
-      price: 1599,
-      mrp: 2499,
-      save: 37,
+      id: "60days",
+      title: "60 Days",
+      bottles: 2,
+      tablets: 69,
+      price: 1431,
+      mrp: 1590,
+      save: 159,
       recommended: true,
     },
     {
-      id: "2months",
-      title: "2 Months",
-      bottles: 2,
-      tablets: 120,
-      price: 2999,
-      mrp: 4998,
-      save: 40,
-    },
-    {
-      id: "4months",
-      title: "4 Months",
-      bottles: 4,
-      tablets: 240,
-      price: 4599,
-      mrp: 5999,
-      save: 50,
+      id: "90days",
+      title: "90 Days",
+      bottles: 3,
+      tablets: 125,
+      price: 1788.75,
+      mrp: 2385,
+      save: 596.25,
     },
   ];
 
@@ -221,7 +212,7 @@ const ingredients = [
     };
     loadProduct();
   }, [productId]); // ← use productId as dependency
-  
+
   const handleAddToCart = () => {
     if (!product) return;
     addToCart({
@@ -401,7 +392,7 @@ const ingredients = [
       ₹ {product.price.toFixed(2)}
     </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
       {plans.map((plan) => (
         <div
           key={plan.id}
