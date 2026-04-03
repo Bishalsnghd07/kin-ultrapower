@@ -5,8 +5,8 @@ import { CartProvider } from "@/context/CartContext";
 import { ProductProvider } from "@/context/ProductContext";
 
 export const metadata: Metadata = {
-  title: "Jewelry Store",
-  description: "Luxury handcrafted jewelry collections",
+  title: "Kin Ultrapower",
+  description: "Leading provider of premium male enhancement supplements, designed to boost performance, confidence, and overall well-being. Our scientifically formulated products are crafted to enhance vitality and support a healthier lifestyle.",
 };
 
 export default function RootLayout({

@@ -217,6 +217,7 @@ import Image from "next/image";
 import BackButton from "@/Reusable/BackButton";
 import { fetchProductById } from "@/lib/api";
 import { useRouter } from "next/navigation";
+import { Leaf, Zap, ShieldCheck, Award } from "lucide-react";
 
 interface Product {
   id: string;
@@ -261,7 +262,7 @@ export default function RingDetail({ params }: { params: { productId: string } }
       setCurrentSlide((prev) => (prev + 1) % banners.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [banners.length]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % banners.length);
@@ -278,6 +279,37 @@ export default function RingDetail({ params }: { params: { productId: string } }
     { id: "1month", title: "1 Month", bottles: 1, tablets: 60, price: 1599, mrp: 2499, save: 37, recommended: true },
     { id: "2months", title: "2 Months", bottles: 2, tablets: 120, price: 2999, mrp: 4998, save: 40 },
     { id: "4months", title: "4 Months", bottles: 4, tablets: 240, price: 4599, mrp: 5999, save: 50 },
+  ];
+
+  const features = [
+    {
+      icon: <Leaf className="w-10 h-10 text-emerald-500" />,
+      title: "100% प्राकृतिक",
+      description: "शुद्ध आयुर्वेदिक जड़ी-बूटियां",
+      borderColor: "border-emerald-500/20",
+      bgColor: "bg-emerald-500/5"
+    },
+    {
+      icon: <Zap className="w-10 h-10 text-amber-500" />,
+      title: "तेज़ असर",
+      description: "15-20 दिन में रिजल्ट",
+      borderColor: "border-amber-500/20",
+      bgColor: "bg-amber-500/5"
+    },
+    {
+      icon: <ShieldCheck className="w-10 h-10 text-blue-500" />,
+      title: "पूरी तरह सुरक्षित",
+      description: "कोई side effect नहीं",
+      borderColor: "border-blue-500/20",
+      bgColor: "bg-blue-500/5"
+    },
+    {
+      icon: <Award className="w-10 h-10 text-yellow-500" />,
+      title: "भरोसेमंद",
+      description: "10,000+ खुश ग्राहक",
+      borderColor: "border-yellow-500/20",
+      bgColor: "bg-yellow-500/5"
+    }
   ];
 
   useEffect(() => {
@@ -321,52 +353,51 @@ export default function RingDetail({ params }: { params: { productId: string } }
   if (!product) return <div className="text-gray-900">Product not found</div>;
 
   return (
-    
     <div className="min-h-screen bg-gray-200 text-gray-900">
       {/* ✅ Carousel */}
-    <div className="relative w-full overflow-hidden">
-      <div
-        className="flex transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-      >
-        {banners.map((banner, index) => (
-          <img
-            key={index}
-            src={banner}
-            alt={`banner-${index}`}
-            className="w-full flex-shrink-0 h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover"
-          />
-        ))}
+      <div className="relative w-full overflow-hidden">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {banners.map((banner, index) => (
+            <img
+              key={index}
+              src={banner}
+              alt={`banner-${index}`}
+              className="w-full flex-shrink-0 h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover"
+            />
+          ))}
+        </div>
+
+        {/* Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+        >
+          ❮
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+        >
+          ❯
+        </button>
+
+        {/* Dots */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+          {banners.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full ${
+                currentSlide === index ? "bg-white" : "bg-white/50"
+              }`}
+            />
+          ))}
+        </div>
       </div>
-
-      {/* Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
-      >
-        ❮
-      </button>
-
-      <button
-        onClick={nextSlide}
-        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
-      >
-        ❯
-      </button>
-
-      {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-        {banners.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${
-              currentSlide === index ? "bg-white" : "bg-white/50"
-            }`}
-          />
-        ))}
-      </div>
-    </div>
       <div className="container mx-auto px-4 py-8">
         {/* <div className="flex md:pl-[5.6rem]"><BackButton /></div> */}
 
@@ -672,7 +703,7 @@ export default function RingDetail({ params }: { params: { productId: string } }
 
             <div className="mt-12 rounded-3xl border border-amber-300 bg-gradient-to-r from-[#fff7ed] via-[#fffdf8] to-[#fefce8] px-8 py-8 shadow-sm">
               <p className="text-3xl font-bold text-amber-600">
-                "जब performance सही हो, तो confidence automatically आ जाता है।"
+                जब performance सही हो, तो confidence automatically आ जाता है।
               </p>
             </div>
           </div>
@@ -984,6 +1015,63 @@ export default function RingDetail({ params }: { params: { productId: string } }
           </div>
         </div>
       </footer>
+
+      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#121721] px-8 py-24 md:px-16 overflow-hidden">
+      {/* Background radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+      <div className="max-w-6xl mx-auto text-center relative z-10">
+        {/* Solution Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 mb-8">
+          <span className="text-amber-500 text-xs">✨</span>
+          <span className="text-amber-400 text-xs font-bold uppercase tracking-widest">समाधान आ गया है</span>
+        </div>
+
+        {/* Main Heading */}
+        <h2 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
+          मिलिए <span className="text-amber-500">Power Capsule</span> से
+        </h2>
+
+        {/* Sub-heading with bullet separators */}
+        <p className="text-gray-400 text-lg md:text-xl font-medium flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mb-16">
+          <span>100% आयुर्वेदिक</span>
+          <span className="text-amber-500/50">•</span>
+          <span>सुरक्षित</span>
+          <span className="text-amber-500/50">•</span>
+          <span>तेज़ असर</span>
+          <span className="text-amber-500/50">•</span>
+          <span>किफायती कीमत</span>
+        </p>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, index) => (
+            <div 
+              key={index}
+              className={`p-10 rounded-[32px] border ${feature.borderColor} ${feature.bgColor} backdrop-blur-md transition-all hover:scale-105 hover:bg-white/5 duration-300 group`}
+            >
+              <div className="flex justify-center mb-6 transform group-hover:scale-110 transition-transform">
+                {feature.icon}
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-gray-400 font-medium">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Floating CTA (Simulating your screenshot's bottom button) */}
+        <div className="fixed bottom-8 right-8 z-50">
+          <button className="bg-red-600 hover:bg-red-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-[0_10px_40px_rgba(220,38,38,0.4)] transition-all flex items-center gap-3 active:scale-95 uppercase tracking-wide">
+            <span className="animate-pulse">💬</span>
+            अभी ऑर्डर करें - 30% OFF
+          </button>
+        </div>
+      </div>
+    </section>
     </div>
   );
 }
