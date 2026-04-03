@@ -3,12 +3,12 @@ import Product, { IProduct } from "../models/Product";
 class ProductRepository {
   // Find products by category
   static async findByCategory(category: string): Promise<IProduct[]> {
-    return Product.find({ category }).lean().exec();
+    return Product.find({ category }).lean().exec() as unknown as Promise<IProduct[]>;
   }
 
   // Find product by ID (using your custom 'id' field)
   static async findById(id: string): Promise<IProduct | null> {
-    return Product.findOne({ id }).exec();
+    return Product.findOne({ id }).exec() as Promise<IProduct | null>;
   }
 
   // Alternative if using MongoDB's default _id:
