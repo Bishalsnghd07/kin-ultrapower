@@ -84,7 +84,7 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
       <div className="flex flex-col items-center justify-center min-h-screen space-y-4">
         <CircleLoader color="#f59e0b" size={80} />
         <p className="text-amber-600 font-light text-sm tracking-widest">
-          CURATING YOUR JEWELRY EXPERIENCE
+          IGNITING YOUR POWER...
         </p>
       </div>
     );
