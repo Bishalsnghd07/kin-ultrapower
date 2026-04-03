@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { use } from "react"
 import { useCart } from "@/context/CartContext";
 import QuantitySelector from "@/components/QuantitySelector";
 import Image from "next/image";
@@ -33,8 +34,9 @@ interface ProductPlan {
 export default function RingDetail({
   params,
 }: {
-  params: { productId: string };
+  params: Promise<{ productId: string }>;
 }) {
+   const { productId } = use(params);        // ← unwrap
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
@@ -192,10 +194,24 @@ const ingredients = [
   { name: "पिप्पली", effect: "तेज असर के लिए absorption", description: "बाकी ingredients को जल्दी absorb होने में मदद करता है।" },
 ];
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   const loadProduct = async () => {
+  //     try {
+  //       const data = await fetchProductById(params.productId);
+  //       setProduct(data);
+  //     } catch (error) {
+  //       console.error("Failed to load product:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   loadProduct();
+  // }, [params.productId]);
+
+   useEffect(() => {
     const loadProduct = async () => {
       try {
-        const data = await fetchProductById(params.productId);
+        const data = await fetchProductById(productId); // ← use productId
         setProduct(data);
       } catch (error) {
         console.error("Failed to load product:", error);
@@ -204,8 +220,8 @@ const ingredients = [
       }
     };
     loadProduct();
-  }, [params.productId]);
-
+  }, [productId]); // ← use productId as dependency
+  
   const handleAddToCart = () => {
     if (!product) return;
     addToCart({
