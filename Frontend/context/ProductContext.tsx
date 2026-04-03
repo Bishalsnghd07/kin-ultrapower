@@ -83,8 +83,8 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen space-y-4">
         <CircleLoader color="#f59e0b" size={80} />
-        <p className="text-amber-600 font-light text-sm tracking-widest">
-          IGNITING YOUR POWER...
+        <p className="text-amber-600 font-medium text-sm tracking-widest">
+          ULTRA POWER...
         </p>
       </div>
     );
