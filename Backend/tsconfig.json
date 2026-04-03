@@ -19,10 +19,8 @@
     "strict": true,
     "esModuleInterop": true,
     // Add these new options
-    "moduleResolution": "bundler",
     "skipLibCheck": true,
     "types": ["node"],
-    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
