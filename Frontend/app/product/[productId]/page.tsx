@@ -976,17 +976,19 @@ const ingredients = [
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {[
         {
-          image: true,
+          image: "/images/testimonial-user.jpg",
           quote: '"पहले सिर्फ 1-2 मिनट में सब खत्म हो जाता था। अब मैं 15-20 मिनट आराम से टिक पाता हूं।"',
           name: 'राजेश कुमार',
           meta: '32 वर्ष • दिल्ली'
         },
         {
+          image: "/images/testimonial-user-2.jpeg",
           quote: '"मैंने बहुत सारे expensive products try किए लेकिन फायदा नहीं हुआ। अब performance में कोई problem नहीं है।"',
           name: 'अमित शर्मा',
           meta: '38 वर्ष • मुंबई'
         },
         {
+          image: "/images/testimonial-user-3.jpeg",
           quote: '"शादी के बाद पहली रात का डर था लेकिन अब confidence बढ़ गया। 100% recommend करूंगा!"',
           name: 'विक्रम सिंह',
           meta: '29 वर्ष • जयपुर'
@@ -1038,6 +1040,7 @@ const ingredients = [
     <div>
       <h4 className="text-xs font-bold text-amber-500 mb-8 uppercase tracking-widest">संपर्क करें</h4>
       <div className="space-y-6">
+        {/* Commented for now, may be needed in future if we want to add phone support back */}
         {/* <div className="flex items-center gap-4 text-white text-xl font-bold">
           <span className="p-3 rounded-xl bg-white/5 border border-white/10 text-amber-500">📞</span>
           +91-XXXXX-XXXXX
