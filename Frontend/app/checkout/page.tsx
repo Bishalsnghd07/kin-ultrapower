@@ -1051,12 +1051,12 @@ export default function CheckoutPage() {
                         </div>
                       </Label>
                     </div>
-                    <Select>
+                    {/* <Select>
                       <Label className="flex items-center gap-4 p-3 border rounded hover:border-[#D87D4A]">
                         <RadioGroupItem value="cod" id="cod" />
                         <SelectValue placeholder="Cash on Delivery" />
                       </Label>
-                    </Select>
+                    </Select> */}
 
                     {/* NetBanking Option */}
                     <div className="flex items-center space-x-4 p-3 border rounded hover:border-[#D87D4A]">
