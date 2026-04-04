@@ -823,7 +823,7 @@ export default function CheckoutPage() {
 
       const options = {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!,
-        amount: response.amount * 1,
+        amount: response.amount * 100,
         currency: "INR",
         name: "My Store",
         description: "Order Payment",
