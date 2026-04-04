@@ -19,14 +19,14 @@ export const createRazorpayOrder = async (
 ): Promise<NormalizedRazorpayOrder> => {
   try {
     const order = await razorpay.orders.create({
-      amount: amountInRupees * 100,
+      amount: amountInRupees * 1,
       currency: "INR",
       payment_capture: true,
     });
 
     return {
       id: order.id,
-      amount: parseInt(order.amount as string, 10),
+      amount: parseInt(order.amount as string, 1),
       currency: order.currency,
       status: order.status,
       receipt: order.receipt || undefined,

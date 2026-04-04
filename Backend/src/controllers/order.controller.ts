@@ -263,13 +263,32 @@ export default class OrderController {
 }
 
       // Calculate totals
-      const subtotal = products.reduce(
-        (sum: number, item: any) => sum + item.price * item.quantity,
-        0
-      );
-      const shipping = 50;
-      const tax = subtotal * 0.2;
-      const total = subtotal + shipping + tax;
+      // const subtotal = products.reduce(
+      //   (sum: number, item: any) => sum + item.price * item.quantity,
+      //   0
+      // );
+      // const shipping = 0;
+      // const tax = 0;
+      // const total = subtotal + shipping + tax;
+
+      // --- Find this block in order.controller.ts ---
+
+// Calculate totals
+const subtotal = products.reduce(
+  (sum: number, item: any) => sum + item.price * item.quantity,
+  0
+);
+
+// 1. Force shipping to 0
+const shipping = 0; 
+
+// 2. Force tax to 0 (This removes that extra 20% / 0.20)
+const tax = 0; 
+
+// 3. The total is now exactly the subtotal
+const total = subtotal + shipping + tax; 
+
+// --- The rest of the code stays the same ---
 
       // Create order
       const order = await Order.create({
