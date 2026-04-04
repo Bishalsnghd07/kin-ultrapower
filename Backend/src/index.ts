@@ -22,6 +22,7 @@ app.use(
       'https://kin-ultrapower-9150z3yww-bishalsnghd07s-projects.vercel.app', // Your specific Vercel link
   'https://kin-ultrapower.vercel.app',
       "http://localhost:3000",
+      "https://shreembmayurveda.in",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
