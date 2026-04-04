@@ -119,7 +119,7 @@ useEffect(() => {
       title: "30 Days",
       bottles: 1,
       tablets: 32,
-      price: 755.25,
+      price: 1,
       mrp: 795,
       save: 39.75,
     },
