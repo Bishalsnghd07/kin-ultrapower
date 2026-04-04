@@ -845,7 +845,7 @@ export default function CheckoutPage() {
 
           if (verifyRes.ok) {
             clearCart();
-            router.push(`/checkout/success?orderId=₹{response.orderId}`);
+            router.push(`/checkout/success?orderId=${response.orderId}`);
           } else {
             const err = await verifyRes.json();
             Swal.fire(
