@@ -540,7 +540,7 @@ const ingredients = [
     </h2>
 
     <p className="mt-10 text-2xl md:text-3xl text-gray-200 leading-relaxed max-w-4xl mx-auto">
-      <span className="text-amber-500 font-extrabold uppercase tracking-tight">Power Capsule</span> सिर्फ एक product नहीं है।
+      <span className="text-amber-500 font-extrabold uppercase tracking-tight">Ultra Power</span> सिर्फ एक product नहीं है।
     </p>
 
     <div className="space-y-6 mt-10">
@@ -577,7 +577,7 @@ const ingredients = [
     </span>
 
     <h2 className="mt-8 text-5xl md:text-7xl font-black text-white leading-tight">
-      मिलिए <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Power Capsule</span> से
+      मिलिए <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Ultra Power</span> से
     </h2>
 
     <p className="mt-6 text-xl md:text-2xl text-gray-400 font-medium">
@@ -740,7 +740,7 @@ const ingredients = [
         ♡ सचाई जानें
       </span>
       <h2 className="mt-8 text-5xl md:text-7xl font-black text-white leading-normal">
-        क्या Power Capsule से <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600 leading-relaxed">साइज़ बढ़ता है?</span>
+        क्या Ultra Power से <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600 leading-relaxed">साइज़ बढ़ता है?</span>
       </h2>
     </div>
 
@@ -749,7 +749,7 @@ const ingredients = [
         ईमानदारी से कहें तो - नहीं।
       </h3>
       <p className="mt-8 text-xl md:text-2xl text-gray-300 text-center leading-relaxed max-w-4xl mx-auto">
-        Power Capsule <span className="text-white font-bold">permanently</span> साइज़ नहीं बढ़ाता। और कोई भी product permanently नहीं बढ़ा सकता।
+        Ultra Power <span className="text-white font-bold">permanently</span> साइज़ नहीं बढ़ाता। और कोई भी product permanently नहीं बढ़ा सकता।
       </p>
 
       <div className="mt-12 rounded-3xl border border-amber-500/20 bg-amber-500/5 p-8 md:p-10">
@@ -799,7 +799,7 @@ const ingredients = [
             <tr className="bg-white/5">
               <th className="px-8 py-6 text-xl font-bold text-gray-400">Feature</th>
               <th className="px-8 py-6 text-xl font-bold text-red-500">अन्य Brands</th>
-              <th className="px-8 py-6 text-xl font-black text-amber-500 bg-amber-500/10">Power Capsule</th>
+              <th className="px-8 py-6 text-xl font-black text-amber-500 bg-amber-500/10">Ultra Power</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-white/5">
@@ -856,7 +856,7 @@ const ingredients = [
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-16">
       <h2 className="text-5xl md:text-7xl font-black text-white leading-tight">ज़रा सोचिए...</h2>
-      <p className="mt-6 text-2xl text-gray-400">Power Capsule लेने के बाद आपकी ज़िंदगी कैसी होगी?</p>
+      <p className="mt-6 text-2xl text-gray-400">Ultra Power लेने के बाद आपकी ज़िंदगी कैसी होगी?</p>
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -969,7 +969,7 @@ const ingredients = [
         10,000+ खुश ग्राहक <br/><span className="text-amber-500">क्या कहते हैं?</span>
       </h2>
       <p className="mt-6 text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-        यह stories हैं उन लोगों की जिन्होंने <span className="text-white font-bold">Power Capsule</span> से अपनी ज़िंदगी बदली
+        यह stories हैं उन लोगों की जिन्होंने <span className="text-white font-bold">Ultra Power</span> से अपनी ज़िंदगी बदली
       </p>
     </div>
 
@@ -1030,7 +1030,7 @@ const ingredients = [
       image: "/images/testimonial-user-3.webp", // ✅ Match the .jpg extension
       quote: '"शादी के बाद पहली रात का डर था लेकिन अब confidence बढ़ गया। 100% recommend करूंगा! लाइफ बदल गई।"',
       name: 'विक्रम सिंह',
-      meta: '29 वर्ष • जयपुर'
+      meta: '39 वर्ष • जयपुर'
     }
   ].map((t, index) => (
     <div 
