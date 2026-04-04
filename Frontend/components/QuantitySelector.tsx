@@ -20,7 +20,7 @@ export default function QuantitySelector({
   };
 
   return (
-    <div className="flex items-center bg-gray-100">
+    <div className="flex items-center bg-gray-100 p-[0.455rem] rounded-lg">
       <button
         onClick={handleDecrement}
         className="px-4 py-2 text-gray-500 hover:text-black transition"

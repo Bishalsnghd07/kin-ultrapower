@@ -23,7 +23,7 @@ interface Product {
 interface ProductPlan {
   id: string;
   title: string;
-  bottles: number;
+  strips: number;
   tablets: number;
   price: number;
   mrp: number;
@@ -117,16 +117,16 @@ useEffect(() => {
     {
       id: "30days",
       title: "30 Days",
-      bottles: 1,
+      strips: 265,
       tablets: 32,
-      price: 1,
+      price: 755.25,
       mrp: 795,
       save: 39.75,
     },
     {
       id: "60days",
       title: "60 Days",
-      bottles: 2,
+      strips: 265,
       tablets: 69,
       price: 1431,
       mrp: 1590,
@@ -136,7 +136,7 @@ useEffect(() => {
     {
       id: "90days",
       title: "90 Days",
-      bottles: 3,
+      strips: 265,
       tablets: 125,
       price: 1788.75,
       mrp: 2385,
@@ -414,7 +414,7 @@ const ingredients = [
           )}
 
           <h3 className="text-xl font-bold text-white">{plan.title}</h3>
-          <p className="text-gray-400 text-sm">{plan.bottles} Bottle</p>
+          <p className="text-gray-400 text-sm">{plan.strips} Per Strip</p>
           <p className="text-gray-400 text-sm">{plan.tablets} Tablets</p>
 
           <p className="text-2xl font-bold mt-4 text-white">
@@ -1017,7 +1017,7 @@ const ingredients = [
     {/* Brand Info */}
     <div>
       <h3 className="text-4xl font-black text-white tracking-tighter">
-        POWER<span className="text-amber-500">CAPSULE</span>
+        ULTRA<span className="text-amber-500">POWER</span>
       </h3>
       <p className="mt-6 text-xl text-gray-400 font-medium leading-relaxed">
         आपकी मर्दानगी का <span className="text-white">असली साथी</span>। सुरक्षित, प्राकृतिक और असरदार।
@@ -1030,7 +1030,7 @@ const ingredients = [
       <ul className="space-y-4 text-lg text-gray-400">
         <li><a href="/privacy-policy" className="hover:text-white transition-colors flex items-center gap-2"><span>→</span> Privacy Policy</a></li>
         <li><a href="/terms" className="hover:text-white transition-colors flex items-center gap-2"><span>→</span> Terms & Conditions</a></li>
-        <li><a href="/return-policy" className="hover:text-white transition-colors flex items-center gap-2"><span>→</span> Return Policy</a></li>
+        <li><a href="/return-policy" className="hover:text-white transition-colors flex items-center gap-2"><span>→</span> Refund & Shipping Policy</a></li>
       </ul>
     </div>
 
@@ -1038,21 +1038,28 @@ const ingredients = [
     <div>
       <h4 className="text-xs font-bold text-amber-500 mb-8 uppercase tracking-widest">संपर्क करें</h4>
       <div className="space-y-6">
-        <div className="flex items-center gap-4 text-white text-xl font-bold">
+        {/* <div className="flex items-center gap-4 text-white text-xl font-bold">
           <span className="p-3 rounded-xl bg-white/5 border border-white/10 text-amber-500">📞</span>
           +91-XXXXX-XXXXX
-        </div>
-        <div className="flex items-center gap-4 text-white text-xl font-bold cursor-pointer hover:text-green-400 transition-colors">
-          <span className="p-3 rounded-xl bg-white/5 border border-white/10 text-green-500">💬</span>
-          WhatsApp Support
-        </div>
+        </div> */}
+<a 
+  href="https://wa.me/919217900585" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="flex items-center gap-4 text-white text-xl font-bold cursor-pointer hover:text-green-400 transition-colors"
+>
+  <span className="p-3 rounded-xl bg-white/5 border border-white/10 text-green-500">
+    💬
+  </span>
+  WhatsApp Support
+</a>
       </div>
     </div>
   </div>
 
   {/* Copyright Line */}
   <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm tracking-widest uppercase">
-    © 2026 Kin Ultrapower Awareness Platform. All Rights Reserved.
+    © 2026 This website is powered by Shree MBM Pharmaceuticals. All Rights Reserved.
   </div>
 </footer>
   </div>
