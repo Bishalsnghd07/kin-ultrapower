@@ -973,7 +973,7 @@ const ingredients = [
       </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {[
         {
           image: "/images/testimonial-user.jpg",
@@ -982,13 +982,13 @@ const ingredients = [
           meta: '32 वर्ष • दिल्ली'
         },
         {
-          image: "/images/testimonial-user-2.jpeg",
+          image: "/images/testimonial-user-2.jpg",
           quote: '"मैंने बहुत सारे expensive products try किए लेकिन फायदा नहीं हुआ। अब performance में कोई problem नहीं है।"',
           name: 'अमित शर्मा',
           meta: '38 वर्ष • मुंबई'
         },
         {
-          image: "/images/testimonial-user-3.jpeg",
+          image: "/images/testimonial-user-3.jpg",
           quote: '"शादी के बाद पहली रात का डर था लेकिन अब confidence बढ़ गया। 100% recommend करूंगा!"',
           name: 'विक्रम सिंह',
           meta: '29 वर्ष • जयपुर'
@@ -1010,7 +1010,55 @@ const ingredients = [
           </div>
         </div>
       ))}
+    </div> */}
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+  {[
+    {
+      image: "/images/testimonial-user.jpeg",
+      quote: '"पहले सिर्फ 1-2 मिनट में सब खत्म हो जाता था। अब मैं 15-20 मिनट आराम से टिक पाता हूं। आत्मविश्वास वापस आ गया है!"',
+      name: 'राजेश कुमार',
+      meta: '32 वर्ष • दिल्ली'
+    },
+    {
+      image: "/images/testimonial-user-2.jpeg", // ✅ Match the .jpg extension
+      quote: '"मैंने बहुत सारे expensive products try किए लेकिन फायदा नहीं हुआ। अब performance में कोई problem नहीं है। शानदार!"',
+      name: 'अमित शर्मा',
+      meta: '38 वर्ष • मुंबई'
+    },
+    {
+      image: "/images/testimonial-user-3.webp", // ✅ Match the .jpg extension
+      quote: '"शादी के बाद पहली रात का डर था लेकिन अब confidence बढ़ गया। 100% recommend करूंगा! लाइफ बदल गई।"',
+      name: 'विक्रम सिंह',
+      meta: '29 वर्ष • जयपुर'
+    }
+  ].map((t, index) => (
+    <div 
+      key={index} 
+      className="group flex flex-col justify-between rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:border-amber-500/40 hover:bg-white/10 hover:-translate-y-2"
+    >
+      <div>
+        {/* The Dynamic Background Image */}
+        <div 
+          className="h-64 rounded-2xl bg-cover bg-center mb-8 border border-white/10 grayscale-[30%] group-hover:grayscale-0 transition-all duration-500 shadow-inner"
+          style={{ backgroundImage: `url(${t.image})` }} // ✅ This is the magic line
+        />
+
+        <div className="text-amber-400 text-2xl mb-6 tracking-widest drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]">
+          ★★★★★
+        </div>
+        <p className="text-gray-200 text-xl leading-relaxed italic mb-8">
+          {t.quote}
+        </p>
+      </div>
+
+      <div className="border-t border-white/10 pt-6">
+        <p className="text-2xl font-black text-white uppercase tracking-tight">{t.name}</p>
+        <p className="text-amber-500/80 text-lg mt-1 font-bold">{t.meta}</p>
+      </div>
     </div>
+  ))}
+</div>
   </div>
 </section>
      {/* Premium Footer Section */}
