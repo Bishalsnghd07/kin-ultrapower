@@ -130,7 +130,7 @@ export function CartDropdown() {
                           <div className="flex-1">
                             <h4 className="font-medium">{item.name}</h4>
                             <p className="text-sm text-gray-500">
-                              ${item.price.toFixed(2)}
+                              ₹{item.price.toFixed(2)}
                             </p>
                           </div>
                           <div className="flex items-center gap-2">
@@ -150,7 +150,7 @@ export function CartDropdown() {
 
                     <div className="flex justify-between items-center pt-4">
                       <span className="text-sm text-gray-500">TOTAL</span>
-                      <span className="font-bold">${cartTotal.toFixed(2)}</span>
+                      <span className="font-bold">₹{cartTotal.toFixed(2)}</span>
                     </div>
 
                     <Link href="/checkout" onClick={() => setIsOpen(false)}>
